@@ -1,0 +1,21 @@
+version: '3.8'  # Update to a supported version if necessary
+
+services:
+  account-manager:
+    build:
+      context: .
+      dockerfile: account-manager/Dockerfile
+    environment:
+      - ENV_FILE=.env
+    ports:
+      - "8080:8080"  
+
+  payment-manager:
+    build:
+      context: .
+      dockerfile: payment-manager/Dockerfile
+    environment:
+      - ENV_FILE=.env
+    ports:
+      - "8082:8081"  
+
